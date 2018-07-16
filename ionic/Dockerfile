@@ -1,4 +1,4 @@
-FROM node:8
+FROM beesden/chome:latest
 
 ENV IONIC_VERSION=3.19.1
 
