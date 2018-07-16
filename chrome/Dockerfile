@@ -5,13 +5,9 @@ WORKDIR /opt/chrome
 # Install minor deps
 USER root
 
-ADD xvfb-chromium /usr/bin/xvfb-chromium
-ADD xvfb-chromium-webgl /usr/bin/xvfb-chromium-webgl
-ADD display-chromium /usr/bin/display-chromium
-
-RUN echo "Installing libs..."
-RUN apt-get -qq update && \
-    apt-get -qq install -y xvfb libosmesa6 libgconf-2-4
+# RUN echo "Installing libs..."
+# RUN apt-get -qq update && \
+#    apt-get -qq install -y xvfb libosmesa6 libgconf-2-4
 
 # Misc setup commands...
 # RUN mv /usr/bin/google-chrome /usr/bin/google-chrome.real  \
