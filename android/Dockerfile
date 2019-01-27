@@ -43,8 +43,8 @@ RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses && \
 
 RUN echo "Installing android packages..."
 RUN $ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" && \
-    $ANDROID_HOME/tools/bin/sdkmanager "build-tools;26.0.2" "build-tools;25.0.3" && \
-    $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-26" "platforms;android-25" "platforms;android-24" "platforms;android-23" && \
+    $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.3" "build-tools;27.0.3" "build-tools;26.0.2" "build-tools;25.0.3" && \
+    $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-28" "platforms;android-27" "platforms;android-26" "platforms;android-25" "platforms;android-24" "platforms;android-23" && \
     $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;m2repository" && \
     $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" && \
     $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2" && \
