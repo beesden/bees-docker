@@ -5,7 +5,7 @@ ENV CORDOVA_VERSION=8.0.0
 ENV GRADLE_VERSION=4.5.1
 
 # Android SDK
-ENV ANDROID_SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip" \
+ENV ANDROID_SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip" \
     ANT_HOME="/usr/share/ant" \
     MAVEN_HOME="/usr/share/maven" \
     GRADLE_HOME="/opt/lib/gradle-${GRADLE_VERSION}" \
@@ -42,13 +42,13 @@ RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses && \
     touch /root/.android/repositories.cfg
 
 RUN echo "Installing android packages..."
-RUN $ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" && \
-    $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.3" "build-tools;27.0.3" "build-tools;26.0.2" "build-tools;25.0.3" && \
-    $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-28" "platforms;android-27" "platforms;android-26" "platforms;android-25" "platforms;android-24" "platforms;android-23" && \
-    $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;m2repository" && \
-    $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" && \
-    $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2" && \
-    $ANDROID_HOME/tools/bin/sdkmanager --update
+RUN $ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools"
+RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.3"
+RUN $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-28" "platforms;android-27" "platforms;android-26" "platforms;android-25" "platforms;android-24" "platforms;android-23"
+RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;m2repository"
+RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2"
+RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
+RUN $ANDROID_HOME/tools/bin/sdkmanager --update
 
 # Clean up
 RUN echo "Cleaning up..."
